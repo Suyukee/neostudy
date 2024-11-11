@@ -1,0 +1,43 @@
+.main {
+	margin: 50% auto;
+	position: relative;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	max-width: 700px;
+	font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main__text {
+	width: 400px;
+	height: 80px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	background: #ededed;
+	border-radius: 10px;
+	font-size: 24px;
+}
+
+.main__tooltip {
+	padding: 15px 20px;
+	position: absolute;
+	top: -70px;
+
+	display: none;
+
+	background: #2c2c2c;
+	color: #ededed;
+	border-radius: 10px;
+	font-size: 24px;
+}
+
+.main__text:hover + .main__tooltip {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
