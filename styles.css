@@ -1,0 +1,35 @@
+.main {
+	margin: auto;
+	max-width: 700px;
+	font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.main__text {
+	text-align: justify;
+}
+
+.main__btn-up {
+	position: fixed;
+	bottom: 20px;
+	right: 20px;
+
+	padding: 5px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	color: #2c2c2c;
+	background: #ededed;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.main__btn-up:hover {
+	background: #90a4f5;
+}
+
+.main__btn-up img {
+	width: 40px;
+	height: 40px;
+}
