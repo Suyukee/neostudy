@@ -1,31 +1,50 @@
 const form = document.querySelector('.form');
 const formErrorLogin = form.querySelector('.item__login-error');
 const formErrorPassword = form.querySelector('.item__password-error');
-const login = document.querySelector('input[name=login]').value;
-const password = document.querySelector('input[name=password]').value;
+const login = form.querySelector('input[name=login]');
+const password = form.querySelector('input[name=password]');
 
 const validateLogin = () => {
-	const numberWords = login.split(' ').length;
+	const numberWords = login.value.split(' ').length;
 
-	const regExp = /[^А-Яа-яЁё ]/g;
+	const regExp = /^[a-яА-Я\-\s]+$/;
 
-	if (!login) {
+	if (login.value === '') {
 		return 'ФИО не может быть пустым';
-	} else if (numberWords < 3) {
+	}
+
+	if (login.value.length < 6) {
+		return 'ФИО слишком короткое';
+	}
+
+	if (numberWords < 3) {
 		return 'ФИО указано не полностью или с ошибкой';
-	} else if (regExp.test(login)) {
-		return 'ФИО должно состоять только из русских букв';
-	} else return '';
+	}
+
+	console.log(login.value, regExp.test(login.value));
+	if (!regExp.test(login.value)) {
+		return 'ФИО должно состоять из русских букв';
+	}
+
+	return '';
 };
 
 const validatePassword = () => {
-	const regExp = /^[a-zа-яё0-9]/;
+	const regExp = /^\w+$/;
 
-	if (!password) {
+	if (password.value === '') {
 		return 'Пароль не может быть пустым';
-	} else if (regExp.test(password)) {
-		return 'Пароль должен состоять только из букв и цифр';
-	} else return '';
+	}
+
+	if (password.value.length < 6) {
+		return 'Пароль слишком короткий';
+	}
+
+	if (!regExp.test(password.value)) {
+		return 'Пароль должен состоять только из латинских букв и цифр';
+	}
+
+	return '';
 };
 
 form.addEventListener('submit', (event) => {
@@ -36,7 +55,17 @@ form.addEventListener('submit', (event) => {
 
 	console.log(formErrorLogin.textContent, formErrorPassword.textContent);
 
-	if (formErrorLogin === '' && formErrorPassword === '') {
+	if (formErrorLogin.textContent !== '') {
+		login.style.borderBottom = '1px solid red';
+	}
+
+	if (formErrorPassword.textContent !== '') {
+		password.style.borderBottom = '1px solid red';
+	}
+
+	if (formErrorLogin.textContent === '' && formErrorPassword.textContent === '') {
+		login.style.borderBottom = '1px solid var(--foreground)';
+		password.style.borderBottom = '1px solid red';
 		form.submit();
 	}
 });

@@ -71,6 +71,10 @@ body {
 .item__password-error {
 	position: absolute;
 	bottom: -24px;
+	left: 0;
+	right: 0;
+
+	text-align: center;
 	color: red;
 }
 
