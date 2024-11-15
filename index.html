@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>JS</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+
+	<body>
+		<main class="main">
+			<div class="form-wrapper">
+				<form class="form">
+					<legend class="form__title">Вход</legend>
+
+					<p class="form__item">
+						<label class="item__label" for="login">ФИО:</label>
+						<input class="item__input" type="text" name="login" id="login" />
+						<span class="item__login-error"></span>
+					</p>
+
+					<p class="form__item">
+						<label class="item__label" for="password">Password:</label>
+						<input class="item__input" type="password" name="password" id="password" />
+						<span class="item__password-error" />
+					</p>
+
+					<div class="form__btn-box">
+						<button type="submit" class="form__button">Continue</button>
+					</div>
+				</form>
+			</div>
+		</main>
+
+		<script src="index.js" defer></script>
+	</body>
+</html>
