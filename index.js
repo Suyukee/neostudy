@@ -1,4 +1,4 @@
-let button = document.querySelector('.main__btn-up');
+const button = document.querySelector('.section__btn-up');
 
 window.onscroll = () => {
 	scrollCheck();
