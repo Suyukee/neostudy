@@ -1,0 +1,20 @@
+:root {
+	--background: #ededed;
+	--foreground: #0a0a0a;
+	--btn-hover: #2c2c2c;
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--background);
+}
+
+.main {
+	margin: 30px auto;
+	max-width: 700px;
+	font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
