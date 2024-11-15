@@ -1,0 +1,67 @@
+:root {
+	--foreground: #ededed;
+	--background: #0a0a0a;
+	--grey: #2c2c2c;
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background: var(--background);
+}
+
+.main {
+	margin: 30px auto;
+	max-width: 700px;
+	font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.currency {
+	padding: 40px 30px;
+	border: 2px solid var(--grey);
+	border-radius: 10px;
+	box-shadow: 0 5px var(--grey);
+	color: var(--foreground);
+}
+
+.currency__title {
+	margin-bottom: 30px;
+}
+
+.currency-list {
+	padding: 0;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 15px;
+
+	list-style: none;
+	font-size: 18px;
+}
+
+@media (max-width: 630px) {
+	.currency__title {
+		text-align: center;
+	}
+	.currency-list {
+		grid-template-columns: 1fr;
+	}
+	.currency-list li {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 5px;
+	}
+}
+
+.currency-list__currency {
+	padding: 5px;
+
+	background: var(--grey);
+	font-family: monospace;
+	border-radius: 4px;
+	transition: background ease 1s;
+}
